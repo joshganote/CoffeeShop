@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-coffeeshop-dev-165751-authRole",
+            "UnauthRoleArn": "arn:aws:iam::377164476600:role/amplify-coffeeshop-dev-165751-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::377164476600:role/amplify-coffeeshop-dev-165751-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-coffeeshop-dev-165751-deployment",
+            "UnauthRoleName": "amplify-coffeeshop-dev-165751-unauthRole",
+            "StackName": "amplify-coffeeshop-dev-165751",
+            "StackId": "arn:aws:cloudformation:us-east-1:377164476600:stack/amplify-coffeeshop-dev-165751/b5437240-dc1d-11ea-9ac3-0ee1cf96ccc3",
+            "AmplifyAppId": "d3ovwfn2l025v3"
+        },
+        "categories": {
+            "auth": {
+                "coffeeshop31f4cadc": {}
+            }
+        }
+    }
+}

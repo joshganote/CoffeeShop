@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"coffeeshop31f4cadc": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
