@@ -1,25 +1,39 @@
-import React, { useContext } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { AuthContext } from './AuthProvider';
+import { Icon } from 'react-native-elements';
+import { HomeStack } from './HomeStack';
+import { SearchStack } from './SearchStack';
+
 
 const Tabs = createBottomTabNavigator()
 
-function Home() {
-  const { logout } = useContext(AuthContext)
+export const AppTabs = ({ }) => {
   return (
-    <View style={styles.container}>
-      <Text>Home</Text>
-      <Button title="Logout" onPress={() => logout()} />
-    </View>
-  )
-}
+    <Tabs.Navigator
 
-function Search() {
-  return (
-    <View style={styles.container}>
-      <Text>Search</Text>
-    </View>
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          if (route.name === 'Home') {
+            return <Icon type="feather" name="home" color={color} />;
+          } else if (route.name === 'Search') {
+            return <Icon type="feather" name="search" color={color} />;
+          }
+          // You can return any component that you like here!
+          //return <Icon type="feather" name="search" />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+        alignItems: "center",
+        justifyContent: "center",
+
+      }}
+    >
+      <Tabs.Screen name='Home' component={HomeStack} />
+      <Tabs.Screen name='Search' component={SearchStack} />
+    </Tabs.Navigator>
   )
 }
 
@@ -30,25 +44,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   }
 })
-
-export const AppTabs = ({ }) => {
-  return (
-    <Tabs.Navigator tabBarOptions={
-      {
-        tabStyle: {
-
-        },
-        labelStyle: {
-          fontSize: 15,
-          alignItems: "center",
-          justifyContent: "center",
-          flex: .70
-        }
-      }
-    }
-    >
-      <Tabs.Screen name='Home' component={Home} />
-      <Tabs.Screen name='Search' component={Search} />
-    </Tabs.Navigator>
-  )
-}
