@@ -6,10 +6,6 @@ export const AuthContext = createContext({
   user: UserAgent,
   login: () => T,
   logout: () => T,
-},{
-  user: null,
-  login: () => {},
-  logout: () => {}
 });
 
 export const AuthProvider = ({ children }) => {
